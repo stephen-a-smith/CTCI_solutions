@@ -5,3 +5,5 @@ Solutions will be given in C, Rust, Python, Java, and Bash
 
 A note on Bash: 
   * Not all problems will be solved in Bash, because bash as a language isn't very well suited to complex data structures (Graphs, Linked Lists).
+
+All Code written is my own - The Problems are exercises taking from "Cracking the Coding Interview" by Gayle Laakmann McDowell.
