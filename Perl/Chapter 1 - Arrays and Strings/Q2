@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+use v5.12;
+
+sub are_permute {
+    chomp @_;
+    for my $x (@_) {
+        $x = uc($x);
+    }
+    join("", sort(split //, $_[0])) #split into list of strings, sort, then rejoin 
+ eq join("", sort(split //, $_[1]))
+}
+
+
+say "Please enter two strings, sperated by a newline, and EOF to submit";
+
+if (are_permute(<STDIN>)) {
+    say "Strings are Permutations";
+} else {
+    say "Strings are not Permutations";
+}
