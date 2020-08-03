@@ -1,3 +1,6 @@
+/**
+* Q1) Create a function to determine if a string has any duplicate characters in it
+*/
 public class Q1 {
     public static void main(String[] args){
         test_fn();
