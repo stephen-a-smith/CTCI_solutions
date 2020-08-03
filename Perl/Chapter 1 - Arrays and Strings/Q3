@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+#
+#   Create a method to replace all spaces in a string with %20
+
+use v5.12;
+
+sub urlify {
+    $_ = $_[0]; 
+    s/ /%20/rg
+   # Replace ' ' with '%20' globally, and return the value 
+}
+
+say urlify("Test String 1");
+say urlify("Test String  2 22 2 22 2");
