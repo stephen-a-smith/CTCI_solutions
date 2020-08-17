@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+#
+#   Q4. Given a string, determine if it can be permutated into a palindrome
+#
+
+# Notice, a palindrome can be defined as 
+#   -If even number of letters
+#       -Every Char repeated an even number of times
+#   -If odd number of letters
+#       -Every char repeated an even number of times except for 1
+#
+# File 4.txt used for testing.
+use v5.12;
+
+
+while(<>){
+    chomp;
+    s/\s//g;
+    my $word = lc $_;
+    my $flag = 0;
+    if(length($word) % 2 != 0){
+        $flag--;
+    }
+    my %checker;
+    foreach(split //, ($word)){
+        $checker{$_}++;
+    }
+    foreach(values %checker){
+        if($_ % 2 != 0){
+            $flag++;
+        }
+    }
+    if($flag){
+        say "$word is not a palindrome";
+    } else {
+        say "$word is a palindrome";
+    }
+}
+
