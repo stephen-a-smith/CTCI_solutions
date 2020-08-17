@@ -7,9 +7,9 @@ use v5.10;
 say "Input your string: ";
 chomp($_ = <STDIN>);
 
-if (/(.).*\1/i){ # Match any character (.) 
-                 # Followed by 0 or more other charcters .*
-                 # Followed by the character matched in the first reference (\1)
+if (/(.).*\1/i){# Match any character (.) 
+                # Followed by 0 or more other charcters .*
+                # Followed by the character matched in the first reference (\1)
     say "That string has duplicate characters";
 } else {
     say "That string has only unique characters";
