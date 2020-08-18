@@ -3,11 +3,15 @@
 */
 
 /** Notice, a palindrome can be defined as 
-    -If even number of letters
-        -Every Char repeated an even number of times
-    -If odd number of letters
-        -Every char repeated an even number of times except for 1
-*/
+  *  -If even number of letters
+  *     -Every Char repeated an even number of times
+  *  -If odd number of letters
+  *     -Every char repeated an even number of times except for 1
+  * 
+  * ASSUMPTIONS:
+  * only ASCII strings in the English Alphabet
+  * No punctuation in input strings
+  */
 public class Q4{
     private boolean isPalindrome(String s){
         s = s.toLowerCase().replace(" ", "");
