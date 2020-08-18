@@ -12,8 +12,10 @@
 # File 4.txt used for testing.
 use v5.12;
 
+open INPUT, "4.txt"
+    or die "Input file not found.";
 
-while(<>){
+while(<INPUT>){
     chomp;
     s/\s//g;
     my $word = lc $_;
