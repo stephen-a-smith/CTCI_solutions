@@ -31,5 +31,5 @@ say oneAway("Pales", "pale") ? "True" : "False";    # TRUE
 say oneAway("bale", "pale") ? "True" : "False";     # TRUE
 say oneAway("pale", "baKe") ? "True" : "False";     # FALSE
 say oneAway("Rope", "Cope") ? "True" : "False";     # TRUE
-say oneAway("Canada", "America") ? "True" : "False";# FALSE 
+say oneAway("Canada", "America") ? "True" : "False";# FALSE
 say oneAway("bake", "kobe") ? "True" : "False";     # TRUE
