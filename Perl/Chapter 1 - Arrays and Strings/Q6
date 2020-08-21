@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+
+#
+#   Write a function to do string compression based on counts.
+#   Example
+#       aabcccccaaa -> a2b1c5a3
+#  
+
+use v5.12;
+
+sub compress {
+    my $str = $_[0];
+    my $out;
+
+    while($str =~ /(.)\1*/){
+        $out .= $1 . length($&);
+        $str = $str =~ s/$&//r;
+    }
+    length($out) > length($_[0]) ? $_[0] : $out;
+}
+
+say compress("aabcccccaaa");        #a2b1c5a3
+say compress("aaaabcdeee");         #a4b1c1d1e3         
+say compress("canada");             #canada  
+say compress("mississippi");        #mississippi
+say com
