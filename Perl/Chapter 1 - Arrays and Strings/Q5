@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+#
+#   Given two strings, write a function to check if they are 1 or 0 edits away
+#   Examples
+#       Pale, ple -> true
+#       pales pale -> true
+#       pale, bale -> true
+#       pale, bake -> false
+#
+
+# My approach - We simply need to keep count of the number of differences between two given strings
+# if we sort the strings first, this will be easier.
+use v5.12;
+
+sub oneAway {
+    my @s1 = split //, (lc $_[0]);
+    push @s1, split //, (lc $_[1]);
+    my $str = join "", (sort @s1);
+    # if length of $str is even, we have strings of the same length
+    # if strings are different lengths, we have 1 solitary letter. Otherwise we have 2
+    my $count = (length($str) % 2 == 0 ? 2 : 1);
+
+    # While a string has 2 adjacent same letters; remove them.
+    while($str =~ /(\w)\1/) {$str = $str =~ s/(\w)\1//r;}
+    
+    $count >= length($str);
+}
+
+say oneAway("Pale", "ple") ? "True" : "False";      # TRUE
+say oneAway("Pales", "pale") ? "True" : "False";    # TRUE
+say oneAway("bale", "pale") ? "True" : "False";     # TRUE
+say oneAway("pale", "baKe") ? "True" : "False";     # FALSE
+say oneAway("Rope", "Cope") ? "True" : "False";     # TRUE
+say oneAway("Canada", "America") ? "True" : "False";# FALSE 
+say oneAway("bake", "kobe") ? "True" : "False";     # TRUE
