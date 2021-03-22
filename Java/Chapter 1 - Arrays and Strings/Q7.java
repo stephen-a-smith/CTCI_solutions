@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Given and image represented by an NxN matrix, where each pixel in the image 
  * is 4 bytes, write a method to rotate the image by 90 degrees
@@ -23,7 +21,7 @@ class Q7 {
 
 class Matrix {
   Pixel[][] data;
-  
+
   public Matrix(Pixel[][] data){
     this.data = data;
   }
